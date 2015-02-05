@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block content %}
+	<section class="information">
+		<h1>Sheritt</h1>
+		<div class="user">
+			<figure class="avatar">
+				<img src="{{user.photo}}" alt="{{user.name}}" />
+				<figcaption class="username">
+					<p>{{user.name}}</p>
+				</figcaption>
+			</figure>
+			<div class="logout">
+				<a href="/logout">Salir</a>
+			</div>
+		</div>
+		<nav>
+			<ul>
+				<li><a href="/history/add">Add!</a></li>
+			</ul>
+		</nav>
+		<div class="historys">
+			{% for history in historys %}
+				<article class="history">
+					<h1>{{ history.title }}</h1>
+					<img src="{{ history.user.photo }}" alt="">
+					<span><a href="#">likes </a>{{ history.like }}</span>
+				</article>
+			{% endfor %}
+		</div>
+	</section>
+{% endblock content %}

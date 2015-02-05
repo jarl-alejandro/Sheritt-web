@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block content %}
+	<div class="user">
+		<figure class="avatar">
+			<img src="{{user.photo}}" alt="{{user.name}}" />
+			<figcaption class="username">
+				<p>{{user.name}}</p>
+			</figcaption>
+		</figure>
+		<div class="logout">
+			<a href="/logout">Salir</a>
+		</div>
+	</div>
+	<div class="add">
+		<form action="/history/save" method="POST">
+			<p>Titulo:</p>
+			<input type="text" name="title" />
+			<p>History:</p>
+			<textarea name="history"></textarea><br>
+			<input type="submit" />
+		</form>
+	</div>
+{% endblock content %}
