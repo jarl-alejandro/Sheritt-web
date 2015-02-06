@@ -2,7 +2,7 @@ var models = require('./models'),
 	Schema = models.Schema;
 
 var HistorySchema = Schema({
-	title: { type:String, required:true },
+	title: String,
 	history: String,
 	like : { type:Number, default:0 },
 	user : {

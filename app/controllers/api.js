@@ -58,3 +58,26 @@ exports.deleteHistory = function(req, res){
 		});
 	});
 };
+
+exports.updateHistory = function(req, res){
+	console.log("PUT");
+
+	var data = req.params.data;
+	console.log("data ", data);
+
+	Historys.findById(data, function (err, history){
+		history.title	= req.body.title;
+		history.history	= req.body.history;
+		history.like	= req.body.like;
+
+		history.save(function (err){
+			if(err)
+				console.log("Hay un error al actualizar " + err);
+			else
+				console.log("Se ha actualizado con exito");
+			res.json(history);
+		});
+
+
+	});
+};
