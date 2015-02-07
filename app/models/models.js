@@ -1,6 +1,9 @@
 var mongoose = require("mongoose");
 
-mongoose.connect("mongodb://localhost/sherrit", function (err){
+
+//mongodb://localhost/sherrit
+
+mongoose.connect("mongodb://jarl:jarl@ds041861.mongolab.com:41861/sheritt", function (err){
 	if(err)
 		console.log("Hay un error al conectase  a DB");
 	else
